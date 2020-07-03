@@ -12,7 +12,7 @@ def home():
         response = requests.get('http://service4:5003/').text
         return render_template('home.html', title='Home', display=response)
 
-@app.route('/outfit', method=['POST'])
+@app.route('/outfit', methods=['POST'])
 def outfit():
     OutfitData = Outfit.query.all()
     return render_template('Outfit.html', title='Brands and Clothes', outfit=OutfitData)
