@@ -9,7 +9,7 @@ from application.models import Outfit
 @app.route('/', methods=['GET'])
 @app.route('/home')
 def home():
-        response = requests.get('http://service4:5003/').text
+        response = requests.get('http://app4:5003/outfit').text
         return render_template('home.html', title='Home', display=response)
 
 @app.route('/outfit', methods=['POST'])
