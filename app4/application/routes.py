@@ -8,8 +8,8 @@ from application.models import Outfit
 
 @app.route('/', methods=['GET', 'POST'])
 def outfit():
-     brands = requests.get('http://service2:5001/').text
-     clothes = requests.get('http://service2:5002/').text
+     brands = requests.get('http://app2:5001/').text
+     clothes = requests.get('http://app3:5002/').text
      out = Outfit(
              brands = brands,
              clothes = clothes
