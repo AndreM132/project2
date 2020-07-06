@@ -1,0 +1,61 @@
+version: '3.7'
+networks:
+      my_network:
+        driver: overlay
+applications:
+        app1:
+        image: andrem132/app1
+        build: ./app1
+        ports:
+              - target: 5000
+                published: 5000
+                protocol: tcp
+        environment: 
+              - SQLALCHEMY_DATABASE_URI=${OUTFIT_DB_URI}
+              - SECRET_KEY=${NEW_SECRET_KEY}
+        networks:
+              - my_network
+        deploy: 
+                 replicas: 2
+        app2:
+        image: andrem132/app2
+        build: ./app2
+        ports:
+              - target: 5001
+                published: 5001
+                protocol: tcp
+        environment:
+              - SQLALCHEMY_DATABASE_URI=${OUTFIT_DB_URI}
+              - SECRET_KEY=${NEW_SECRET_KEY}
+        networks:
+              - my_network
+        deploy:
+                 replicas: 2
+        app3:
+        image: andrem132/app3
+        build: ./app3
+        ports:
+              - target: 5002
+                published: 5002
+                protocol: tcp
+        environment:
+              - SQLALCHEMY_DATABASE_URI=${OUTFIT_DB_URI}
+              - SECRET_KEY=${NEW_SECRET_KEY}
+        networks:
+              - my_network
+        deploy:
+                 replicas: 2
+        app4:
+        image: andrem132/app4
+        build: ./app4
+        ports:
+              - target: 5003
+                published: 5003
+                protocol: tcp
+        environment:
+              - SQLALCHEMY_DATABASE_URI=${OUTFIT_DB_URI}
+              - SECRET_KEY=${NEW_SECRET_KEY}
+        networks:
+              - my_network
+        deploy:
+                 replicas: 2        
