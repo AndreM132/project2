@@ -8,9 +8,9 @@ from application.models import Clothes
 
 @app.route('/', methods=['GET', 'POST'])
 def clothes():
-    randombrands = random.randint(1, 10)
-    getClothes = Clothes.query.filter_by(id=randomclothes).first()
-    print(getClothes)
+    randomclothes = random.randint(1, 10)
+    getClothes = Clothes.query.filter_by(clothes_id=randomclothes).first()
+    
     
     return str(getClothes)
 

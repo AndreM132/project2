@@ -9,7 +9,7 @@ from application.models import Brands
 @app.route('/', methods=['GET', 'POST'])
 def brands():
     randombrands = random.randint(1, 10)
-    getBrands = Brands.query.filter_by(id=randombrands).first()
-    print(getBrands)
+    getBrands = Brands.query.filter_by(brands_id=randombrands).first()
+    
 
     return str(getBrands)
