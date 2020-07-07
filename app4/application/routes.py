@@ -17,6 +17,6 @@ def outfit():
      db.session.add(out)
      db.session.commit()
      
-     line = brands + " " + "and" + " " + clothes
-     return line
+     response = brands + " " + "and" + " " + clothes
+     return response
 

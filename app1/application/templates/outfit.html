@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body_content %}
+<title>
+    {{ title }}
+</title>
+<br>
+<p>Brands and Clothes </p>
+<br>
+{% for o in outfit %}
+<div>
+            <tr>
+                
+                <td>{{ o.brands }}</td>
+                <td>{{ o.clothes }}</td>
+            </div>
+          
+{% endfor %}
+{% endblock %}

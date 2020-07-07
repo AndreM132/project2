@@ -10,12 +10,12 @@ from application.models import Outfit
 @app.route('/home')
 def home():
         response = requests.get('http://app4:5003/').text
-        return render_template('home.html', title='Home', display=response)
+        return render_template('home.html', display=response, title='Home')
 
-@app.route('/outfit', methods=['POST'])
+@app.route('/outfit')
 def outfit():
     OutfitData = Outfit.query.all()
-    return render_template('Outfit.html', title='Brands and Clothes', outfit=OutfitData)
+    return render_template('outfit.html', outfit=OutfitData, title='Brands and Clothes')
 
 
 
