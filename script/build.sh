@@ -2,6 +2,6 @@
 
 
 
-docker-compose build
-docker-compose push
+sudo docker-compose build
+sudo docker-compose push
 
