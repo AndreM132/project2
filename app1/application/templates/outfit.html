@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body_content %}
+<br>
+<h1>Brands and Clothes </h1>
+<br>
+<p>List of Brands and Clothes from previous winners!</p>
+{% for o in outfit %}
+<div>
+            <tr>
+                
+                <td>{{ o.brands }}</td>
+                <td>{{ o.clothes }}</td>
+            </div>
+          
+{% endfor %}
+{% endblock %}
