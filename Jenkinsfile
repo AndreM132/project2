@@ -6,15 +6,14 @@ pipeline{
                sh "chmod +x ./script/*"
                   }
         }
-        stage('Configuration and Installation') {
+        stage('Build') {
             steps{
-                sh './script/install.sh'
-                sh './script/ansible.sh'
-                 }
-        }    
+                sh './script/build.sh'      
+            }
+           }
         stage('Depoly Docker Compose') {
             steps{
-                sh './script/dockerdeploy.sh'   
+                sh './script/deploy.sh'   
             }}
            }   
 }
