@@ -8,7 +8,8 @@ pipeline{
         }
         stage('Build') {
             steps{
-                sh './script/build.sh'      
+                sh './script/build.sh'
+                sh './script/ansible.sh'
             }
            }
         stage('Depoly Docker Compose') {
