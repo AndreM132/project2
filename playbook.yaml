@@ -5,8 +5,8 @@
 - hosts: masters
   become: yes
   roles:
-  - master
+  - docker-swarm-init
 - hosts: workers
   become: yes
   roles:
-  - workers 
+  - docker-swarm-add-worker 
