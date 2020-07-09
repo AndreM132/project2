@@ -2,7 +2,7 @@ import unittest
   
 from flask import url_for
 from flask_testing import TestCase
-
+from unittest.mock import patch
 from application import app, db
 from application.models import Outfit
 from os import getenv
@@ -35,14 +35,11 @@ class TestBase(TestCase):
 class TestViews(TestBase):
 
     def test_outfit_view(self):
-        with self.client:
-            response = self.client.post(
-                    url_for('outfit'),
-                    data=dict(
-                        brands = "Adidas",
-                        clothes = "Tracksuit"
-                    ),
-            )
+        with patch('requests.post') as o:
+            o.return_value.text = "Adidas"
+            response = self.client.post(url_for('outfit'),data=dict(
+                        brands="Adidas",
+                        clothes="Tshirts"), follows_redirects=True)
             self.assertIn(b"Adidas", response.data)
 
 
