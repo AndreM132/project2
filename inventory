@@ -1,0 +1,16 @@
+[masters]
+master ansible_host=swarm-master
+
+[masters:vars]
+ansible_user=jenkins
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+
+[workers]
+worker-1 ansible_host=project2-vm1
+worker-2 ansible_host=project2-vm2
+
+[workers:vars]
+ansible_user=jenkins
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
