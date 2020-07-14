@@ -39,9 +39,12 @@ class TestViews(TestBase):
             o.return_value.text = "Adidas"
             response = self.client.post(url_for('outfit'),data=dict(
                         brands="Adidas",
-                        clothes="Tshirts"), follows_redirects=True)
+                        clothes="Tshirts"))
             self.assertIn(b"Adidas", response.data)
 
+class TestApp(TestBase):
+    def outfit_test(self):
+        assert routes.outfit_test(brands,clothes) == "BAPE Tshirts"
 
         
     
