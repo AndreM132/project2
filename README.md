@@ -1,5 +1,4 @@
-# Project 2 
-# Practical Project
+# Project 2 Practical Project
 
 ## Contents
 ### 1. [Brief](#Brief)
